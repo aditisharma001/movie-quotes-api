@@ -51,7 +51,7 @@ MovieQuotes uses an API key to allow access to the API. Before anything you shou
 
 Please send an email to [juanroldan1989@gmail.com](https://github.com/juanroldan1989/movie_quotes#1-usage)
 
-MovieQuotes expects for the API key to be included in **all** API requests to the server in a header that looks like this:
+MovieQuotes expects for the API key to be included in **all** API requests in a header that looks like this:
 
 `Authorization: Token token=abcd1234`
 
@@ -61,12 +61,69 @@ You must replace <code>abcd1234</code> with your personal API key.
 
 # Quotes
 
-## Get All Quotes
+## All
 
 ```ruby
 require 'movie_quotes'
 
 filter = MovieQuotes.new
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes"
+  -H "Authorization: Token token=abcd1234"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "content": "Oh, no, it wasn't the airplanes. It was Beauty killed the Beast.",
+    "year": 1933,
+    "categories": ["Drama", "Action", "Adventure"],
+    "image_large_url": "https://s-media-cache-ak0.pinimg.com/736x/56/9c/f2/569cf2832aaabbcaa3487f22d335b4d7.jpg",
+    "image_thumb_url":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI54WEStqtfEBeocTd1umDmBV4T2-u8D4NB_EJ13PUTUdMBuwfJde4sb4",
+    "rating": 8,
+    "movie": {
+      "title": "King Kong",
+      "slug": "king-kong"
+    },
+    "character": {
+      "name": "Carl Denham",
+      "slug": "carl-denham"
+    },
+    "actor":{
+      "name": "Robert Armstrong",
+      "slug": "robert-armstrong"
+    }
+  },
+  ...
+]
+```
+
+This endpoint retrieves all quotes.
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+
+## Pagination
+
+```ruby
+require 'movie_quotes'
+
+filter = MovieQuotes.new
+
+# Make API call
 filter.results
 ```
 
@@ -103,120 +160,15 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"
 ]
 ```
 
-This endpoint retrieves all quotes (default to **20** per page).
+Every call to the API retrieves **20** quotes at a time (per page).
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes`
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 page | 1 | Used to retrieve **20** quotes top on each request.
-
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
 
