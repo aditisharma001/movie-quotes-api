@@ -20,76 +20,59 @@ search: true
 
 Welcome to the **MovieQuotes** API! You can use this API to access well known quotes from more than **500 movies**.
 
+Search through movie quotes by **actors**, **characters**, **movies**, **genres**, **years** and even **pieces** of quotes.
+
 There are language bindings in **Shell** & **Ruby**! You can view code **examples** in the dark area to the **right** and switch the programming language of the examples with the tabs in the **top right**.
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> Setup the API Key
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes"
+  -H "Authorization: Token token=abcd1234"
 ```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
 
 ```ruby
-require 'kittn'
+MovieQuotes.configure do |config|
+  config.api_key = "abcd1234"
+end
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+# Then create a new filter instance like this:
+require 'movie_quotes'
+
+filter = MovieQuotes.new
 ```
 
-```python
-import kittn
+> Make sure to replace `abcd1234` with your API key
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+MovieQuotes uses an API key to allow access to the API. Before anything you should get an API Key (free).
+
+Please send an email to [juanroldan1989@gmail.com](https://github.com/juanroldan1989/movie_quotes#1-usage)
+
+MovieQuotes expects for the API key to be included in **all** API requests to the server in a header that looks like this:
+
+`Authorization: Token token=abcd1234`
+
+<aside class="notice">
+You must replace <code>abcd1234</code> with your personal API key.
+</aside>
+
+# Quotes
+
+## Get All Quotes
+
+```ruby
+require 'movie_quotes'
+
+filter = MovieQuotes.new
+filter.results
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"
+  -H "Authorization: Token token=abcd1234"
 ```
 
 > The above command returns JSON structured like this:
@@ -97,38 +80,41 @@ let kittens = api.kittens.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "content": "Oh, no, it wasn't the airplanes. It was Beauty killed the Beast.",
+    "year": 1933,
+    "categories": ["Drama", "Action", "Adventure"],
+    "image_large_url": "https://s-media-cache-ak0.pinimg.com/736x/56/9c/f2/569cf2832aaabbcaa3487f22d335b4d7.jpg",
+    "image_thumb_url":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI54WEStqtfEBeocTd1umDmBV4T2-u8D4NB_EJ13PUTUdMBuwfJde4sb4",
+    "rating": 8,
+    "movie": {
+      "title": "King Kong",
+      "slug": "king-kong"
+    },
+    "character": {
+      "name": "Carl Denham",
+      "slug": "carl-denham"
+    },
+    "actor":{
+      "name": "Robert Armstrong",
+      "slug": "robert-armstrong"
+    }
   },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
+  ...
 ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all quotes (default to **20** per page).
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+page | 1 | Used to retrieve **20** quotes top on each request.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
 ## Get a Specific Kitten
 
