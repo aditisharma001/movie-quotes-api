@@ -4,8 +4,6 @@ title: API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='https://github.com/juanroldan1989/movie_quotes#1-usage'>Sign Up for a Developer API Key</a>
@@ -123,6 +121,10 @@ require 'movie_quotes'
 
 filter = MovieQuotes.new
 
+filter.by_page(1)
+# or
+filter.by_page("1")
+
 # Make API call
 filter.results
 ```
@@ -172,3 +174,210 @@ Parameter | Default | Description
 --------- | ------- | -----------
 page | 1 | Used to retrieve **20** quotes top on each request.
 
+
+# Filters
+
+All API methods are **chainable**, they can be applied one after another to conform the desired request.
+
+## By Actor
+
+```ruby
+filter.by_actor("keanu reeves")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+actor | Used to retrieve quotes said by an actor.
+
+
+## By Character
+```ruby
+filter.by_character("morpheus")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+character | Used to retrieve quotes said by a character.
+
+
+
+## By Content
+```ruby
+filter.by_content("no spoon")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+content | Used to retrieve quotes containing a word or pieces of quotes:
+
+
+
+## By Category (Movie genre)
+```ruby
+filter.by_category("action")
+
+# "OR" behavior when multiple categories are applied
+filter.by_category(["action", "crime", "drama"])
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+category | Used to retrieve quotes said in movies from 1 or N categories.
+
+
+
+## By Movie
+```ruby
+filter.by_movie("the matrix")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+movie | Used to retrieve quotes said in a movie.
+
+
+
+## By Rating
+Quotes filtered by rating from 1(worst) to 10(best)
+
+```ruby
+filter.by_rating(10)
+# or
+filter.by_rating("10")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+rating | Used to retrieve quotes with a certain rating.
+
+
+
+
+
+## By Year
+
+
+
+## Randomly
+
+```ruby
+# A single quote is picked randomly and returned to client.
+filter.by_random
+
+# or 
+# A single quote is picked randomly and returned to client.
+filter.by_random(1)
+filter.by_random("1")
+
+# or
+# Four quotes are picked randomly and returned to client.
+filter.by_random(4)
+filter.by_random("4")
+
+# Make API call
+filter.results
+```
+
+```shell
+# A single quote is picked randomly and returned to client.
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=1"
+  -H "Authorization: Token token=abcd1234"
+
+# Four quotes are picked randomly and returned to client.
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+random | Used to retrieve 1 or N quotes randomly.
