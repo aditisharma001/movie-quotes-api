@@ -109,11 +109,6 @@ This endpoint retrieves all quotes.
 
 `GET http://movie-quotes-app.herokuapp.com/api/v1/quotes`
 
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-
 ## Pagination
 
 ```ruby
@@ -277,6 +272,7 @@ category | Used to retrieve quotes said in movies from 1 or N categories.
 
 
 
+
 ## By Character
 ```ruby
 filter.by_character("morpheus")
@@ -302,28 +298,32 @@ character | Used to retrieve quotes said by a character.
 
 
 
+
+
 ## By Content
 ```ruby
-filter.by_content("no spoon")
+filter.by_content("spoon")
 
 # Make API call
 filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon"
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon`
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
 content | Used to retrieve quotes containing a word or pieces of quotes.
+
+
 
 
 
@@ -349,6 +349,40 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"
 Parameter | Description
 --------- | -----------
 movie | Used to retrieve quotes said in a movie.
+
+
+
+
+
+## By Multiple
+
+Allows to query by several filters at once (movie, actor, character, quote's content and categories) providing only a string.
+
+Search results are gathered following an **OR** behavior.
+
+```ruby
+filter.by_multiple("matrix")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+multiple | Used to retrieve quotes containing a word or pieces of quotes **OR** quotes said in a movie **OR** by an actor **OR** by a character.
+
+
 
 
 
@@ -384,6 +418,39 @@ rating | Used to retrieve quotes with a certain rating.
 
 
 ## By Year
+```ruby
+filter.by_year(1999)
+
+# "OR" behavior when multiple years are applied
+filter.by_year([1999, 2005])
+
+# "OR" behavior when multiple years are applied
+filter.by_year(["1999", "2005"])
+
+# Make API call
+filter.results
+```
+
+```shell
+# Single year applied
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999"
+  -H "Authorization: Token token=abcd1234"
+
+# Multiples years applied
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?years[]=1999,2005"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+years | Used to retrieve quotes said in movies from an specific year.
+
 
 
 
