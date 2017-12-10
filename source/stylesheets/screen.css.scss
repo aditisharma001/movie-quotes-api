@@ -1,8 +1,12 @@
 @charset "utf-8";
+
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("//fonts.googleapis.com/css?family=Raleway:300,500,700");
+
 @import 'normalize';
-@import 'variables';
+@import 'variables'; //revert to tripit defaults
+@import 'variables2'; // tradegecko overrides
 @import 'icon-font';
-// @import 'rtl'; // uncomment to switch to RTL format
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -28,6 +32,7 @@ html, body {
   color: $main-text;
   padding: 0;
   margin: 0;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @extend %default-font;
@@ -59,8 +64,10 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
-  font-weight: bold;
+  padding: $nav-padding;
+  box-sizing: border-box;
+
+  @extend %nav-font;
 
   // language selector for mobile devices
   .lang-selector {
@@ -79,23 +86,22 @@ html, body {
 
   &>.search {
     position: relative;
+    margin: $nav-padding 0;
 
     input {
-      background: $nav-bg;
-      border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      background: $base-grey-5;
+      padding: $nav-padding 0 $nav-padding 30px;
       box-sizing: border-box;
-      margin: $nav-v-padding $nav-padding;
-      width: $nav-width - 30;
+      width: $nav-width - ($nav-padding * 2);
+      border: 0;
       outline: none;
+      border-radius: $border-radius; /* ios has a default border radius */
       color: $nav-text;
-      border-radius: 0; /* ios has a default border radius */
     }
 
     &:before {
       position: absolute;
-      top: 17px;
+      top: $nav-padding + 3px;
       left: $nav-padding;
       color: $nav-text;
       @extend %icon-search;
@@ -123,7 +129,6 @@ html, body {
 
     li {
       margin: 1em $nav-padding;
-      line-height: 1;
     }
 
     a {
@@ -131,11 +136,11 @@ html, body {
       text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        color: $main-text;
       }
     }
   }
-
 
   // The Table of Contents is composed of multiple nested
   // unordered lists.  These styles remove the default
@@ -144,7 +149,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 36px;
   }
 
   li {
@@ -152,18 +157,24 @@ html, body {
     transition-property: background;
     transition-timing-function: linear;
     transition-duration: 200ms;
+    a {
+      color: $nav-text;
+      text-decoration: none;
+    }
   }
 
   // This is the currently selected ToC entry
   .toc-link.active {
     background-color: $nav-active-bg;
-    color: $nav-active-text;
+    color: $nav-active-parent-text;
+    border-radius: $border-radius;
   }
 
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
     background-color: $nav-active-parent-bg;
     color: $nav-active-parent-text;
+    border-radius: $border-radius;
   }
 
   .toc-list-h2 {
@@ -178,22 +189,21 @@ html, body {
   }
 
   .toc-footer {
-    padding: 1em 0;
+    padding: $nav-padding 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: $dotted-border;
 
     li,a {
-      color: $nav-text;
+      color: $nav-footer-text;
       text-decoration: none;
     }
 
     a:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     li {
-      font-size: 0.8em;
-      line-height: 1.7;
+      @extend %small-font;
       text-decoration: none;
     }
   }
@@ -216,12 +226,10 @@ html, body {
 #nav-button {
   span {
     display: block;
-    $side-pad: $main-padding / 2 - 8px;
-    padding: $side-pad $side-pad $side-pad;
-    background-color: rgba($main-bg, 0.7);
-    transform-origin: 0 0;
-    transform: rotate(-90deg) translate(-100%, 0);
-    border-radius: 0 0 0 5px;
+    margin-top: $nav-v-padding;
+    padding: $nav-padding;
+    background-color: $tg-slate;
+    border-radius: 0 3px 3px 0;
   }
   padding: 0 1.5em 5em 0; // increase touch size area
   display: none;
@@ -229,10 +237,9 @@ html, body {
   top: 0;
   left: 0;
   z-index: 100;
-  color: #000;
+  color: $tg-slate;
   text-decoration: none;
   font-weight: bold;
-  opacity: 0.7;
   line-height: 16px;
   img {
     height: 16px;
@@ -241,7 +248,6 @@ html, body {
 
   transition: left 0.3s ease-in-out;
 
-  &:hover { opacity: 1; }
   &.open {left: $nav-width}
 }
 
@@ -276,14 +282,16 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    padding: 1em $main-padding;
+    background-color: $code-annotation-bg;
   }
 }
 
 .lang-selector {
-  background-color: $lang-select-bg;
+  background-color: $code-annotation-bg;
+  border-radius: $border-radius;
   width: 100%;
-  font-weight: bold;
+
   a {
     display: block;
     float:left;
@@ -296,11 +304,14 @@ html, body {
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
       color: $lang-select-pressed-text;
+      border-radius: $border-radius;
     }
 
     &.active {
       background-color: $lang-select-active-bg;
       color: $lang-select-active-text;
+      border-radius: $border-radius;
+      font-weight: 600;
     }
   }
 
@@ -342,7 +353,7 @@ html, body {
     padding-left: $main-padding + 15px;
   }
 
-  // the div is the tocify hidden div for placeholding stuff
+  // the div is the toc hidden div for placeholding stuff
   &>h1, &>h2, &>div {
     clear:both;
   }
@@ -350,13 +361,10 @@ html, body {
   h1 {
     @extend %header-font;
     font-size: 25px;
-    padding-top: 0.5em;
+    padding-top: 1.0em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    margin-top: 5em;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -366,13 +374,10 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
-    margin-top: 4em;
+    font-size: 24px;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+    padding-top: 2em;
+    padding-bottom: 0.5em;
   }
 
   // h2s right after h1s should bump right up
@@ -384,7 +389,7 @@ html, body {
 
   h3, h4, h5, h6 {
     @extend %header-font;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
   }
@@ -406,14 +411,11 @@ html, body {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
-      code {
-        white-space: nowrap;
-      }
     }
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: $solid-border;
       vertical-align: bottom;
     }
 
@@ -422,15 +424,15 @@ html, body {
     }
 
     tr:last-child {
-      border-bottom: 1px solid #ccc;
+      border-bottom: $solid-border;
     }
 
     tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+      background-color: lighten($main-bg,3.2%);
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+      background-color: darken($main-bg,.5%);
     }
   }
 
@@ -443,8 +445,18 @@ html, body {
   }
 
   p, li, dt, dd {
-    line-height: 1.6;
+    line-height: 1.8;
     margin-top: 0;
+  }
+
+  a {
+    font-weight: 700;
+    text-decoration: none;
+    color: $content-link;
+    transition: linear 50ms;
+    &:hover {
+      color: $content-link-hover;
+    }
   }
 
   img {
@@ -452,9 +464,9 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba($code-bg, .05);
     padding: 3px;
-    border-radius: 3px;
+    border-radius: $border-radius;
     @extend %break-words;
     @extend %code-font;
   }
@@ -467,10 +479,14 @@ html, body {
   aside {
     padding-top: 1em;
     padding-bottom: 1em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 28px;
+    margin-left: 28px;
+    width: 47%;
     background: $aside-notice-bg;
     line-height: 1.6;
+    border-radius: $border-radius;
+    color: $white;
+    display: inline-table;
 
     &.warning {
       background-color: $aside-warning-bg;
@@ -483,8 +499,8 @@ html, body {
 
   aside:before {
     vertical-align: middle;
-    padding-right: 0.5em;
-    font-size: 14px;
+    padding-right: 0.2em;
+    @extend %base-font
   }
 
   aside.notice:before {
@@ -501,10 +517,9 @@ html, body {
 
   .search-highlight {
     padding: 2px;
-    margin: -3px;
-    border-radius: 4px;
-    border: 1px solid #F7E633;
-    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+    margin: -2px;
+    border-radius: $border-radius;
+    background-color: $search-highlight;
   }
 }
 
@@ -515,8 +530,8 @@ html, body {
 
 .content {
   pre, blockquote {
-    background-color: $code-bg;
-    color: #fff;
+    background-color: $code-annotation-bg;
+    color: $white;
 
     margin: 0;
     width: $examples-width;
@@ -531,9 +546,9 @@ html, body {
     &>p { margin: 0; }
 
     a {
-      color: #fff;
+      color: $white;
       text-decoration: none;
-      border-bottom: dashed 1px #ccc;
+      border-bottom: $solid-border;
     }
   }
 
@@ -546,9 +561,9 @@ html, body {
 
   blockquote {
     &>p {
-      background-color: $code-annotation-bg;
+      background-color: rgba($code-bg, 0.3);
       padding: $code-annotation-padding 2em;
-      color: #eee;
+      color: $base-grey-10;
     }
   }
 }
@@ -560,6 +575,9 @@ html, body {
 // There are also a couple styles disperesed
 
 @media (max-width: $tablet-width) {
+  .content {
+    padding-top: $main-padding;
+  }
   .toc-wrapper {
     left: -$nav-width;
 
@@ -593,6 +611,7 @@ html, body {
 
   .toc-wrapper .lang-selector {
     display: block;
+    margin: $nav-padding 0;
   }
 
   .page-wrapper .lang-selector {
@@ -614,5 +633,64 @@ html, body {
 }
 
 .highlight, .highlight .w {
-  background-color: $code-bg;
+  background-color: $code-annotation-bg;
+}
+
+.private, .deprecated {
+  @extend %label-font;
+  color: $white;
+  background-color: $base-grey-70;
+  border-radius: $border-radius;
+  padding: 1px $nav-v-padding;
+  border-radius: 3px;
+}
+
+.faux-toc-link {
+  @extend %nav-font;
+  padding: 10px;
+  line-height: 36px;
+  text-decoration: none;
+  color: $tg-slate;
+}
+
+a[data-title=Resources] {
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding-top: 30px;
+}
+
+#resources {
+  margin-bottom: 0px;
+  font-weight: bold;
+  & + p {
+    display: none;
+  }
+  & + p + h1 {
+    padding-top: 0.6em;
+    margin-top: 0px;
+    border-top: 0;
+  }
+}
+
+.content pre.tab-json--inline {
+  float: left;
+  clear: none;
+  background-color: $examples-bg;
+  border-radius: $border-radius;
+  margin-bottom: 15px;
+  margin-left: 28px;
+  width: 47%;
+  .w {
+    background-color: $examples-bg;
+  }
+  .p {
+    color: $white;
+  }
+  .s2 {
+    color: #a6e22e;
+  }
+  .mi {
+    color: #f6574d;
+  }
 }

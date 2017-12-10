@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import 'normalize';
-@import 'variables';
+// @import 'variables'; revert to tripit defaults
+@import 'variables2'; // tradegecko overrides
 @import 'icon-font';
 
 /*
@@ -27,11 +28,11 @@ body {
   @extend %default-font;
 }
 
-.tocify, .toc-footer, .lang-selector, .search, #nav-button {
+.toc, .toc-footer, .lang-selector, .search, #nav-button {
   display: none;
 }
 
-.tocify-wrapper>img {
+.toc-wrapper>img {
   margin: 0 auto;
   display: block;
 }

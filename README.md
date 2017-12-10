@@ -57,3 +57,10 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
  1. Commit your changes to the markdown source: `git commit -a -m "Update index.md"`
  2. Push the *markdown source* changes to GitHub: `git push`
  3. Run `./deploy.sh`
+
+
+### Customizing Slate Them
+
+I've applied [TradeGecko](http://developer.tradegecko.com/) styles from into this project:
+
+https://github.com/tradegecko/smaug/tree/master/source/stylesheets
