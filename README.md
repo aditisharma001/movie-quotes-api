@@ -1,10 +1,16 @@
 <div align="left">
-  <a href="https://github.com/juanroldan1989/movie_quotes"><img width="136" src="https://github.com/juanroldan1989/movie_quotes/raw/master/icons/icon3.png" alt="movie_quotes ruby logo" /></a>
+  <a href="https://github.com/juanroldan1989/movie_quotes">
+    <img width="136" src="https://github.com/juanroldan1989/movie-quotes-api/raw/master/source/images/icon3.png" alt="movie_quotes ruby logo" />
+    <img width="136" src="https://github.com/juanroldan1989/movie-quotes-api/raw/master/source/images/plus-logo.jpg" alt="ionic_movie_quoteslogo" />
+    <img src="https://github.com/juanroldan1989/movie-quotes-api/raw/master/source/images/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
+  </a>
 </div>
 
 # MovieQuotes API Docs
 
-Please check all available information [here](http://juanroldan.com.ar/movie-quotes-api)
+* Please check all available information [here](http://juanroldan.com.ar/movie-quotes-api)
+
+* Big ruby fan? We've got your back with this [awesome gem](https://github.com/juanroldan1989/movie_quotes)
 
 --------------------------------------------------------
 
