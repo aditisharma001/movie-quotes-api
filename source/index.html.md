@@ -157,7 +157,7 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"
 ]
 ```
 
-Every call to the API retrieves **20** quotes at a time (per page).
+Every API call retrieves **20** quotes at a time (per page).
 
 ### HTTP Request
 
