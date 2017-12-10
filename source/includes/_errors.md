@@ -9,6 +9,6 @@ Error Code | Meaning
 ---------- | -------
 401 | Unauthorized -- Bad credentials.
 418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many quotes! Slow down!
+429 | Throttle limit reached. Retry later
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.

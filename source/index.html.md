@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - examples
+  - rate_limit
   - errors
 
 search: true
