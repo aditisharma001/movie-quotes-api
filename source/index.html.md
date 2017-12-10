@@ -460,6 +460,8 @@ years | Used to retrieve quotes said in movies from an specific year.
 
 ## Randomly
 
+One or many quotes can be picked randomly and returned to the client.
+
 ```ruby
 # A single quote is picked randomly and returned to client.
 filter.by_random
