@@ -112,6 +112,10 @@ This endpoint retrieves all quotes.
 
 ## Pagination
 
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.
+
+Every API call retrieves **20** quotes at a time (per page).
+
 ```ruby
 require 'movie_quotes'
 
@@ -157,8 +161,6 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"
   ...
 ]
 ```
-
-Every API call retrieves **20** quotes at a time (per page).
 
 ### HTTP Request
 
