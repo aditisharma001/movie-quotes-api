@@ -61,6 +61,6 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
 
 ### Customizing Slate Them
 
-I've applied [TradeGecko](http://developer.tradegecko.com/) styles from into this project:
+I've applied [TradeGecko](http://developer.tradegecko.com/) styles into this project:
 
 https://github.com/tradegecko/smaug/tree/master/source/stylesheets
