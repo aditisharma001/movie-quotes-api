@@ -9,6 +9,7 @@ toc_footers:
   - <a href='https://github.com/juanroldan1989/movie_quotes#1-usage'>Sign Up for a Developer API Key</a>
 
 includes:
+  - examples
   - errors
 
 search: true
@@ -177,7 +178,8 @@ All API methods are **chainable**, they can be applied one after another to conf
 ## By Actor
 
 ```ruby
-filter.by_actor("keanu reeves")
+# apply "slug" format to search terms, results will be more accurate
+filter.by_actor("keanu-reeves")
 
 # Make API call
 filter.results
