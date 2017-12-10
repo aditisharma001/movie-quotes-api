@@ -47,7 +47,7 @@ filter = MovieQuotes.new
 
 <a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API key to allow access to the API. Before anything you should get an API Key (free).
 
-Please send an email to [juanroldan1989@gmail.com](https://github.com/juanroldan1989/movie_quotes#1-usage)
+Please send an email to <a href="http://juanroldan.com.ar" target="_blank">juanroldan1989@gmail.com</a>
 
 <a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API key to be included in **all** API requests in a header that looks like this:
 
