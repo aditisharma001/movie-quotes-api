@@ -204,55 +204,6 @@ Parameter | Description
 actor | Used to retrieve quotes said by an actor.
 
 
-## By Character
-```ruby
-filter.by_character("morpheus")
-
-# Make API call
-filter.results
-```
-
-```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"
-  -H "Authorization: Token token=abcd1234"
-```
-
-### HTTP Request
-
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus`
-
-### Query Parameters
-
-Parameter | Description
---------- | -----------
-character | Used to retrieve quotes said by a character.
-
-
-
-## By Content
-```ruby
-filter.by_content("no spoon")
-
-# Make API call
-filter.results
-```
-
-```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon"
-  -H "Authorization: Token token=abcd1234"
-```
-
-### HTTP Request
-
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon`
-
-### Query Parameters
-
-Parameter | Description
---------- | -----------
-content | Used to retrieve quotes containing a word or pieces of quotes.
-
-
 
 ## By Category (movie genre)
 
@@ -323,6 +274,56 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=sci-fi,ac
 Parameter | Description
 --------- | -----------
 category | Used to retrieve quotes said in movies from 1 or N categories.
+
+
+
+## By Character
+```ruby
+filter.by_character("morpheus")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+character | Used to retrieve quotes said by a character.
+
+
+
+## By Content
+```ruby
+filter.by_content("no spoon")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon"
+  -H "Authorization: Token token=abcd1234"
+```
+
+### HTTP Request
+
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+content | Used to retrieve quotes containing a word or pieces of quotes.
 
 
 
