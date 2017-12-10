@@ -16,7 +16,7 @@ search: true
 
 # Introduction
 
-Welcome to the [MovieQuotes](movie-quotes-app.herokuapp.com) API! You can use this API to access well known quotes from more than **500 movies**.
+Welcome to the <a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than **500 movies**.
 
 Search through movie quotes by **actors**, **characters**, **movies**, **genres**, **years** and even **pieces** of quotes.
 
@@ -45,11 +45,11 @@ filter = MovieQuotes.new
 
 > Make sure to replace `abcd1234` with your API key
 
-[MovieQuotes](movie-quotes-app.herokuapp.com) uses an API key to allow access to the API. Before anything you should get an API Key (free).
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API key to allow access to the API. Before anything you should get an API Key (free).
 
 Please send an email to [juanroldan1989@gmail.com](https://github.com/juanroldan1989/movie_quotes#1-usage)
 
-[MovieQuotes](movie-quotes-app.herokuapp.com) expects for the API key to be included in **all** API requests in a header that looks like this:
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API key to be included in **all** API requests in a header that looks like this:
 
 `Authorization: Token token=abcd1234`
 
