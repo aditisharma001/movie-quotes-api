@@ -16,7 +16,7 @@ search: true
 
 # Introduction
 
-Welcome to the **MovieQuotes** API! You can use this API to access well known quotes from more than **500 movies**.
+Welcome to the [MovieQuotes](movie-quotes-app.herokuapp.com) API! You can use this API to access well known quotes from more than **500 movies**.
 
 Search through movie quotes by **actors**, **characters**, **movies**, **genres**, **years** and even **pieces** of quotes.
 
@@ -45,16 +45,16 @@ filter = MovieQuotes.new
 
 > Make sure to replace `abcd1234` with your API key
 
-MovieQuotes uses an API key to allow access to the API. Before anything you should get an API Key (free).
+[MovieQuotes](movie-quotes-app.herokuapp.com) uses an API key to allow access to the API. Before anything you should get an API Key (free).
 
 Please send an email to [juanroldan1989@gmail.com](https://github.com/juanroldan1989/movie_quotes#1-usage)
 
-MovieQuotes expects for the API key to be included in **all** API requests in a header that looks like this:
+[MovieQuotes](movie-quotes-app.herokuapp.com) expects for the API key to be included in **all** API requests in a header that looks like this:
 
 `Authorization: Token token=abcd1234`
 
 <aside class="notice">
-You must replace <code>abcd1234</code> with your personal API key.
+We have an awesome Ruby gem available :) <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a>
 </aside>
 
 # Quotes
@@ -250,11 +250,50 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=no-spoon"
 
 Parameter | Description
 --------- | -----------
-content | Used to retrieve quotes containing a word or pieces of quotes:
+content | Used to retrieve quotes containing a word or pieces of quotes.
 
 
 
-## By Category (Movie genre)
+## By Category (movie genre)
+
+Categories available to query and find amazing quotes:
+
+<table>
+  <tbody>
+    <tr>
+      <td>action</td>
+      <td>adventure</td>
+      <td>animation</td>
+      <td>biography</td>
+      <td>comedy</td>
+      <td>crime</td>
+      <td>documentary</td>
+    </tr>
+    <tr>
+      <td>drama</td>
+      <td>family</td>
+      <td>fantasy</td>
+      <td>film-noir</td>
+      <td>history</td>
+      <td>horror</td>
+      <td>music</td>
+    </tr>
+    <tr>
+      <td>musical</td>
+      <td>mystery</td>
+      <td>romance</td>
+      <td>sci-fi</td>
+      <td>short</td>
+      <td>sport</td>
+      <td>thriller</td>
+    </tr>
+    <tr>
+      <td>war</td>
+      <td>western</td>
+    </tr>
+  </tbody>
+</table>
+
 ```ruby
 filter.by_category("action")
 
@@ -266,7 +305,12 @@ filter.results
 ```
 
 ```shell
+# Single category applied
 curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action"
+  -H "Authorization: Token token=abcd1234"
+
+# Multiples categories applied
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=sci-fi,action"
   -H "Authorization: Token token=abcd1234"
 ```
 
@@ -308,7 +352,7 @@ movie | Used to retrieve quotes said in a movie.
 
 
 ## By Rating
-Quotes filtered by rating from 1(worst) to 10(best)
+Quotes filtered by rating from **1(worst)** to **10(best)**.
 
 ```ruby
 filter.by_rating(10)
