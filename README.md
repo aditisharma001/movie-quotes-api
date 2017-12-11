@@ -57,6 +57,7 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
  1. Commit your changes to the markdown source: `git commit -a -m "Update index.md"`
  2. Push the *markdown source* changes to GitHub: `git push`
  3. Run `./deploy.sh`
+ 4. **Friendly reminder**: Any kind of work should be done on `master` branch. Make sure `master` and `gh-pages` branches are always synced, because in the end the content published in the server is the one from `gh-pages` branch. If things are not looking as expected after deploying, feel free to remove `gh-pages` branch locally, create a fresh one from `master` and force-push it into the repository.
 
 
 ### Customizing Slate Them
