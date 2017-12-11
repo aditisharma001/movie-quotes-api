@@ -1,0 +1,1044 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="ruby">ruby</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#quotes" class="toc-h1 toc-link" data-title="Quotes">Quotes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#all" class="toc-h2 toc-link" data-title="All">All</a>
+                  </li>
+                  <li>
+                    <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#filters" class="toc-h1 toc-link" data-title="Filters">Filters</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#by-actor" class="toc-h2 toc-link" data-title="By Actor">By Actor</a>
+                  </li>
+                  <li>
+                    <a href="#by-category-movie-genre" class="toc-h2 toc-link" data-title="By Category (movie genre)">By Category (movie genre)</a>
+                  </li>
+                  <li>
+                    <a href="#by-character" class="toc-h2 toc-link" data-title="By Character">By Character</a>
+                  </li>
+                  <li>
+                    <a href="#by-content" class="toc-h2 toc-link" data-title="By Content">By Content</a>
+                  </li>
+                  <li>
+                    <a href="#by-movie" class="toc-h2 toc-link" data-title="By Movie">By Movie</a>
+                  </li>
+                  <li>
+                    <a href="#by-multiple" class="toc-h2 toc-link" data-title="By Multiple">By Multiple</a>
+                  </li>
+                  <li>
+                    <a href="#by-rating" class="toc-h2 toc-link" data-title="By Rating">By Rating</a>
+                  </li>
+                  <li>
+                    <a href="#by-year" class="toc-h2 toc-link" data-title="By Year">By Year</a>
+                  </li>
+                  <li>
+                    <a href="#randomly" class="toc-h2 toc-link" data-title="Randomly">Randomly</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#filtering-examples" class="toc-h1 toc-link" data-title="Filtering examples">Filtering examples</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#example-1" class="toc-h2 toc-link" data-title="Example 1">Example 1</a>
+                  </li>
+                  <li>
+                    <a href="#example-2" class="toc-h2 toc-link" data-title="Example 2">Example 2</a>
+                  </li>
+                  <li>
+                    <a href="#example-3" class="toc-h2 toc-link" data-title="Example 3">Example 3</a>
+                  </li>
+                  <li>
+                    <a href="#example-4" class="toc-h2 toc-link" data-title="Example 4">Example 4</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#rate-limiting" class="toc-h1 toc-link" data-title="Rate Limiting">Rate Limiting</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/juanroldan1989/movie_quotes#1-usage'>Sign Up for a Developer API Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the <a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than <strong>500 movies</strong>.</p>
+
+<p>Search through movie quotes by <strong>actors</strong>, <strong>characters</strong>, <strong>movies</strong>, <strong>genres</strong>, <strong>years</strong> and even <strong>pieces</strong> of quotes.</p>
+
+<p>There are language bindings in <strong>Shell</strong> &amp; <strong>Ruby</strong>! You can view code <strong>examples</strong> in the dark area to the <strong>right</strong> and switch the programming language of the examples with the tabs in the <strong>top right</strong>.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>Setup the API Key</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"abcd1234"</span>
+<span class="k">end</span>
+
+<span class="c1"># Then create a new filter instance like this:</span>
+<span class="nb">require</span> <span class="s1">'movie_quotes'</span>
+
+<span class="n">filter</span> <span class="o">=</span> <span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>abcd1234</code> with your API key</p>
+</blockquote>
+
+<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API key to allow access to the API. Before anything you should get an API Key (free).</p>
+
+<p>Please send an email to <a href="http://juanroldan.com.ar" target="_blank">juanroldan1989@gmail.com</a></p>
+
+<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API key to be included in <strong>all</strong> API requests in a header that looks like this:</p>
+
+<p><code>Authorization: Token token=abcd1234</code></p>
+
+<aside class="notice">
+We have an awesome Ruby gem available :) <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a>
+</aside>
+<h1 id='quotes'>Quotes</h1><h2 id='all'>All</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'movie_quotes'</span>
+
+<span class="n">filter</span> <span class="o">=</span> <span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oh, no, it wasn't the airplanes. It was Beauty killed the Beast."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1933</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Drama"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Action"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Adventure"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s-media-cache-ak0.pinimg.com/736x/56/9c/f2/569cf2832aaabbcaa3487f22d335b4d7.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI54WEStqtfEBeocTd1umDmBV4T2-u8D4NB_EJ13PUTUdMBuwfJde4sb4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"King Kong"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"king-kong"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carl Denham"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carl-denham"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Robert Armstrong"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robert-armstrong"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all quotes.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes</code></p>
+<h2 id='pagination'>Pagination</h2>
+<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.</p>
+
+<p>Every API call retrieves <strong>20</strong> quotes at a time (per page).</p>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'movie_quotes'</span>
+
+<span class="n">filter</span> <span class="o">=</span> <span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_page</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_page</span><span class="p">(</span><span class="s2">"1"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oh, no, it wasn't the airplanes. It was Beauty killed the Beast."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1933</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Drama"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Action"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Adventure"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s-media-cache-ak0.pinimg.com/736x/56/9c/f2/569cf2832aaabbcaa3487f22d335b4d7.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI54WEStqtfEBeocTd1umDmBV4T2-u8D4NB_EJ13PUTUdMBuwfJde4sb4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"King Kong"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"king-kong"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carl Denham"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carl-denham"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Robert Armstrong"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robert-armstrong"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>1</td>
+<td>Used to retrieve <strong>20</strong> quotes top on each request.</td>
+</tr>
+</tbody></table>
+<h1 id='filters'>Filters</h1>
+<p>All API methods are <strong>chainable</strong>, they can be applied one after another to conform the desired request.</p>
+<h2 id='by-actor'>By Actor</h2><pre class="highlight ruby tab-ruby"><code><span class="c1"># apply "slug" format to search terms, results will be more accurate</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_actor</span><span class="p">(</span><span class="s2">"keanu-reeves"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>actor</td>
+<td>Used to retrieve quotes said by an actor.</td>
+</tr>
+</tbody></table>
+<h2 id='by-category-movie-genre'>By Category (movie genre)</h2>
+<p>Categories available to query and find amazing quotes:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>action</td>
+      <td>adventure</td>
+      <td>animation</td>
+      <td>biography</td>
+      <td>comedy</td>
+      <td>crime</td>
+      <td>documentary</td>
+    </tr>
+    <tr>
+      <td>drama</td>
+      <td>family</td>
+      <td>fantasy</td>
+      <td>film-noir</td>
+      <td>history</td>
+      <td>horror</td>
+      <td>music</td>
+    </tr>
+    <tr>
+      <td>musical</td>
+      <td>mystery</td>
+      <td>romance</td>
+      <td>sci-fi</td>
+      <td>short</td>
+      <td>sport</td>
+      <td>thriller</td>
+    </tr>
+    <tr>
+      <td>war</td>
+      <td>western</td>
+    </tr>
+  </tbody>
+</table>
+<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_category</span><span class="p">(</span><span class="s2">"action"</span><span class="p">)</span>
+
+<span class="c1"># "OR" behavior when multiple categories are applied</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_category</span><span class="p">([</span><span class="s2">"action"</span><span class="p">,</span> <span class="s2">"crime"</span><span class="p">,</span> <span class="s2">"drama"</span><span class="p">])</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Single category applied</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+
+<span class="c"># Multiples categories applied</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=sci-fi,action"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>Used to retrieve quotes said in movies from 1 or N categories.</td>
+</tr>
+</tbody></table>
+<h2 id='by-character'>By Character</h2><pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_character</span><span class="p">(</span><span class="s2">"morpheus"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>character</td>
+<td>Used to retrieve quotes said by a character.</td>
+</tr>
+</tbody></table>
+<h2 id='by-content'>By Content</h2><pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_content</span><span class="p">(</span><span class="s2">"spoon"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content</td>
+<td>Used to retrieve quotes containing a word or pieces of quotes.</td>
+</tr>
+</tbody></table>
+<h2 id='by-movie'>By Movie</h2><pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_movie</span><span class="p">(</span><span class="s2">"the matrix"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix</code></p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>movie</td>
+<td>Used to retrieve quotes said in a movie.</td>
+</tr>
+</tbody></table>
+<h2 id='by-multiple'>By Multiple</h2>
+<p>Allows to query by several filters at once (movie, actor, character, quote&#39;s content and categories) providing only a string.</p>
+
+<p>Search results are gathered following an <strong>OR</strong> behavior.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_multiple</span><span class="p">(</span><span class="s2">"matrix"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>multiple</td>
+<td>Used to retrieve quotes containing a word or pieces of quotes <strong>OR</strong> quotes said in a movie <strong>OR</strong> by an actor <strong>OR</strong> by a character.</td>
+</tr>
+</tbody></table>
+<h2 id='by-rating'>By Rating</h2>
+<p>Quotes filtered by rating from <strong>1(worst)</strong> to <strong>10(best)</strong>.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_rating</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_rating</span><span class="p">(</span><span class="s2">"10"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10</code></p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>rating</td>
+<td>Used to retrieve quotes with a certain rating.</td>
+</tr>
+</tbody></table>
+<h2 id='by-year'>By Year</h2><pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_year</span><span class="p">(</span><span class="mi">1999</span><span class="p">)</span>
+
+<span class="c1"># "OR" behavior when multiple years are applied</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_year</span><span class="p">([</span><span class="mi">1999</span><span class="p">,</span> <span class="mi">2005</span><span class="p">])</span>
+
+<span class="c1"># "OR" behavior when multiple years are applied</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_year</span><span class="p">([</span><span class="s2">"1999"</span><span class="p">,</span> <span class="s2">"2005"</span><span class="p">])</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Single year applied</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+
+<span class="c"># Multiples years applied</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years[]=1999,2005"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999</code></p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>years</td>
+<td>Used to retrieve quotes said in movies from an specific year.</td>
+</tr>
+</tbody></table>
+<h2 id='randomly'>Randomly</h2>
+<p>One or many quotes can be picked randomly and returned to the client.</p>
+<pre class="highlight ruby tab-ruby"><code><span class="c1"># A single quote is picked randomly and returned to client.</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span>
+
+<span class="c1"># or </span>
+<span class="c1"># A single quote is picked randomly and returned to client.</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span><span class="p">(</span><span class="s2">"1"</span><span class="p">)</span>
+
+<span class="c1"># or</span>
+<span class="c1"># Four quotes are picked randomly and returned to client.</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span><span class="p">(</span><span class="s2">"4"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># A single quote is picked randomly and returned to client.</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=1"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+
+<span class="c"># Four quotes are picked randomly and returned to client.</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre><h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>random</td>
+<td>Used to retrieve 1 or N quotes randomly.</td>
+</tr>
+</tbody></table>
+<h1 id='filtering-examples'>Filtering examples</h1><h2 id='example-1'>Example 1</h2>
+<p>Filtering well known quotes by movies like <strong>Die Hard</strong> and actors like <strong>Bruce Willis</strong></p>
+<pre class="highlight ruby tab-ruby"><code><span class="c1"># apply "slug" format to search terms, results will be more accurate</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_movie</span><span class="p">(</span><span class="s2">"die-hard"</span><span class="p">).</span><span class="nf">by_actor</span><span class="p">(</span><span class="s2">"bruce-willis"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=die-hard&amp;actor=bruce-willis"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yippie-ki-yay, motherfucker!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1988</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Die Hard"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"die-hard"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Mc Clane"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john-mc-clane"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bruce Willis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bruce-willis"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='example-2'>Example 2</h2>
+<p>Filtering well known quotes by actors like <strong>Al Pacino</strong></p>
+<pre class="highlight ruby tab-ruby"><code><span class="c1"># apply "slug" format to search terms, results will be more accurate</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_actor</span><span class="p">(</span><span class="s2">"al-pacino"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=al-pacino"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"Keep your friends close, but your enemies closer."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1974</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/DfHJDLoGInM/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHyFYb7t8Qoniyea8IlFDvte0hvB8wzPBQWenC8hV_oMUudfiWlAzDEXgW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"The Godfather Part Ii"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"the-godfather-part-ii"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Michael Corleone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"michael-corleone"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Al Pacino"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"al-pacino"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"Say 'hello' to my little friend!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1983</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/a_z4IuxAqpE/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiQEnHHPSvib02Te1fLCBaEyzMlkpK1Fomc7wFwu0lt6FZxv-gUavr6XeA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Scarface"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"scarface"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Tony Montana"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"tony-montana"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Al Pacino"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"al-pacino"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='example-3'>Example 3</h2>
+<p>Filtering well known quotes by movie categories like <strong>crime</strong> &amp; <strong>drama</strong> and years <strong>1976</strong> &amp; <strong>1991</strong></p>
+<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_category</span><span class="p">([</span><span class="s2">"crime"</span><span class="p">,</span> <span class="s2">"drama"</span><span class="p">]).</span><span class="nf">by_year</span><span class="p">([</span><span class="mi">1976</span><span class="p">,</span> <span class="mi">1991</span><span class="p">])</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=crime,drama&amp;years[]=1976,1991"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"You talkin' to me?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1976</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/-QWL-FwX4t4/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQsrFYpPUa_qLZqvjL53JrBsWSLlfYBaC5qiXdNhDSTZZysA2U_IaK03HG3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Taxi Driver"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"taxi-driver"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Travis Bickle"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"travis-bickle"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Robert De Niro"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"robert-de-niro"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"A census taker once tried to test me. I ate his liver with some fava beans and a nice Chianti."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1991</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/M1b2v_Lls3A/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQO6iO860KO8e6Qmuv_ogCKdHXdo5CgWpPioU6CF9g5FSoqbQNoXPccQJo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"The Silence Of The Lambs"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"the-silence-of-the-lambs"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Dr. Hannibal Lecter"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"dr-hannibal-lecter"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Anthony Hopkins"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"anthony-hopkins"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"I do wish we could chat longer, but I'm having an old friend for dinner."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1991</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/sbJ89LFheTs/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRnGtsUwpoCc-5nw_zznRS2615ZafAiESSebcMbC9NoT83Mh5XvnEI0ohg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"The Silence Of The Lambs"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"the-silence-of-the-lambs"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Dr. Hannibal Lecter"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"dr-hannibal-lecter"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Anthony Hopkins"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"anthony-hopkins"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"I'm as mad as hell, and I'm not going to take this anymore!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1976</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Biography"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/ZwMVMbmQBug/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTsFCb5V4pS0taLWJwiZTDhZXD_qzzVgtmALirHoHLbicudOGFuZew-ujhH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Network"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"network"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Howard Beale"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"howard-beale"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Peter Finch"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"peter-finch"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"Yo, Adrian!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1976</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Sport"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Drama"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/WgScBiXkO9Y/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQF_Rd6Z3208kVy83_1LvvJsXUme4XMVQkejNadWsF4DzbIbgcyL-Z0rP4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Rocky"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"rocky"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Rocky Balboa"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"rocky-balboa"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Sylvester Stallone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"sylvester-stallone"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='example-4'>Example 4</h2>
+<p>Filtering well known quotes by characters like <strong>Harry Callahan</strong></p>
+<pre class="highlight ruby tab-ruby"><code><span class="c1"># apply "slug" format to search terms, results will be more accurate</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_character</span><span class="p">(</span><span class="s2">"harry-callahan"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=harry-callahan"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"Go ahead, make my day."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1983</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/n_SU-cJFRjs/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQn33w-E743mL3L-ar6uI9vzE9Nu8wRE_d8UkQsDcT5vCpjWUH5TfP6szOA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Sudden Impact"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"sudden-impact"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Harry Callahan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"harry-callahan"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Clint Eastwood"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"clint-eastwood"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya, punk?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1971</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/8Xjr2hnOHiM/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTgtJip8s8q3PZ2O9mxmpVwMBsndKmFKAVJ--Oca1b6WlznU8BpTUD-Xg4"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Dirty Harry"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"dirty-harry"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Harry Callahan"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"harry-callahan"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Clint Eastwood"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"clint-eastwood"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='rate-limiting'>Rate Limiting</h1>
+<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API provides a rate limit of <strong>5</strong> requests per <strong>5</strong> seconds.</p>
+
+<p>If you go over this limit the API will return a response with a status code of <strong>429</strong> until the reset time.</p>
+<h1 id='errors'>Errors</h1>
+<!-- <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside> -->
+
+<p>The <a href="http://movie-quotes-app.herokuapp.com">MovieQuotes</a> API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Bad credentials.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Throttle limit reached. Retry later</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="ruby">ruby</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
