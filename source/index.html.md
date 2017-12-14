@@ -189,6 +189,7 @@ filter.results
 ```
 
 ```shell
+# apply "slug" format to search terms, results will be more accurate
 curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"
   -H "Authorization: Token token=abcd1234"
 ```
@@ -334,13 +335,15 @@ content | Used to retrieve quotes containing a word or pieces of quotes.
 
 ## By Movie
 ```ruby
-filter.by_movie("the matrix")
+# apply "slug" format to search terms, results will be more accurate
+filter.by_movie("the-matrix")
 
 # Make API call
 filter.results
 ```
 
 ```shell
+# apply "slug" format to search terms, results will be more accurate
 curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"
   -H "Authorization: Token token=abcd1234"
 ```
