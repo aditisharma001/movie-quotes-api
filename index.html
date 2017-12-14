@@ -704,13 +704,13 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rando
 </tr>
 </tbody></table>
 <h1 id='filtering-examples'>Filtering examples</h1><h2 id='example-1'>Example 1</h2>
-<p>Filtering well known quotes by movies like <strong>Die Hard</strong> and actors like <strong>Bruce Willis</strong></p>
+<p>Filtering well known quotes by movies like <strong>The Matrix</strong></p>
 <pre class="highlight ruby tab-ruby"><code><span class="c1"># apply "slug" format to search terms, results will be more accurate</span>
-<span class="n">filter</span><span class="p">.</span><span class="nf">by_movie</span><span class="p">(</span><span class="s2">"die-hard"</span><span class="p">).</span><span class="nf">by_actor</span><span class="p">(</span><span class="s2">"bruce-willis"</span><span class="p">)</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_movie</span><span class="p">(</span><span class="s2">"the-matrix"</span><span class="p">)</span>
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=die-hard&amp;actor=bruce-willis"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre>
 <blockquote>
@@ -718,27 +718,122 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rando
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yippie-ki-yay, motherfucker!"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1988</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Never send a human to do a machine's job."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1999</span><span class="p">,</span><span class="w">
     </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Action"</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Adventure"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Sci-Fi"</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/xq7x1KQMjqw/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTXQQ00AD5fSgEjG-0UP6Gj7KwZhF7_ENlaJXqM98-7gLZo_cKRSanbwyk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
     </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Die Hard"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"die-hard"</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Matrix"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the-matrix"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Mc Clane"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john-mc-clane"</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agent Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent-smith"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bruce Willis"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bruce-willis"</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Weaving"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hugo-weaving"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Matrix is the world that has been pulled over your eyes to blind you from the truth."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1999</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Adventure"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Sci-Fi"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/O4zICmyuNvs/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTm1nJGU1MR5iWW001gqBVBPzLHpGX_rT3ioECTM3m-PPHJUntH5Xbu1OI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Matrix"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the-matrix"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Morpheus"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"morpheus"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Laurence Fishburne"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"laurence-fishburne"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"There is no spoon."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1999</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Adventure"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Sci-Fi"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/XO0pcWxcROI/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMamYtDE9kTXvKdA308D-HkaOFRZi17jxupMuL950MRLIJWGg23NFk0JUk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Matrix"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the-matrix"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spoon Boy"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spoon-boy"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spoon Boy"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spoon-boy"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Then you'll see, that it is not the spoon that bends, it is only yourself."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1999</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Adventure"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Sci-Fi"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/uAXtO5dMqEI/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8hmUNY_YCq0imcusA5-PDQo7-Y4a5JVpB4VIG6y9dugMYZhspZIoiGM"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Matrix"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the-matrix"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spoon Boy"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spoon-boy"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spoon Boy"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spoon-boy"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Anderson. Surprised to see me?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2003</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"Action"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Sci-Fi"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://i.ytimg.com/vi/hUAie-X3u8I/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN5-L0hcFyndEfAq-hU4ewoAfKMszC0Vpp357PiDHiKsDz0sB7Pz-0CkbB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Matrix Reloaded "</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the-matrix-reloaded"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agent Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"agent-smith"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hugo Weaving"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hugo-weaving"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
