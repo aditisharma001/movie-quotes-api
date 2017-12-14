@@ -441,7 +441,8 @@ We have an awesome Ruby gem available :) <a href='https://github.com/juanroldan1
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># apply "slug" format to search terms, results will be more accurate</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves</code></p>
@@ -563,11 +564,13 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 <td>Used to retrieve quotes containing a word or pieces of quotes.</td>
 </tr>
 </tbody></table>
-<h2 id='by-movie'>By Movie</h2><pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_movie</span><span class="p">(</span><span class="s2">"the matrix"</span><span class="p">)</span>
+<h2 id='by-movie'>By Movie</h2><pre class="highlight ruby tab-ruby"><code><span class="c1"># apply "slug" format to search terms, results will be more accurate</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">by_movie</span><span class="p">(</span><span class="s2">"the-matrix"</span><span class="p">)</span>
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"</span>
+</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># apply "slug" format to search terms, results will be more accurate</span>
+curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix</code></p>
