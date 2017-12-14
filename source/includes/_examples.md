@@ -2,18 +2,18 @@
 
 ## Example 1
 
-Filtering well known quotes by movies like **Die Hard** and actors like **Bruce Willis**
+Filtering well known quotes by movies like **The Matrix**
 
 ```ruby
 # apply "slug" format to search terms, results will be more accurate
-filter.by_movie("die-hard").by_actor("bruce-willis")
+filter.by_movie("the-matrix")
 
 # Make API call
 filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=die-hard&actor=bruce-willis"
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"
   -H "Authorization: Token token=abcd1234"
 ```
 
@@ -22,27 +22,122 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=die-hard&actor=b
 ```json
 [
   {
-    "content": "Yippie-ki-yay, motherfucker!",
-    "rating": 5,
-    "year": 1988,
+    "content": "Never send a human to do a machine's job.",
+    "year": 1999,
     "categories": [
-      "Thriller",
-      "Crime",
-      "Action"
+      "Action",
+      "Adventure",
+      "Sci-Fi"
     ],
-    "image_large_url": "https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg",
-    "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+    "image_large_url": "https://i.ytimg.com/vi/xq7x1KQMjqw/maxresdefault.jpg",
+    "image_thumb_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTXQQ00AD5fSgEjG-0UP6Gj7KwZhF7_ENlaJXqM98-7gLZo_cKRSanbwyk",
+    "rating": 10,
     "movie": {
-      "title": "Die Hard",
-      "slug": "die-hard"
+      "title": "The Matrix",
+      "slug": "the-matrix"
     },
     "character": {
-      "name": "John Mc Clane",
-      "slug": "john-mc-clane"
+      "name": "Agent Smith",
+      "slug": "agent-smith"
     },
     "actor": {
-      "name": "Bruce Willis",
-      "slug": "bruce-willis"
+      "name": "Hugo Weaving",
+      "slug": "hugo-weaving"
+    }
+  },
+  {
+    "content": "The Matrix is the world that has been pulled over your eyes to blind you from the truth.",
+    "year": 1999,
+    "categories": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "image_large_url": "https://i.ytimg.com/vi/O4zICmyuNvs/hqdefault.jpg",
+    "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTm1nJGU1MR5iWW001gqBVBPzLHpGX_rT3ioECTM3m-PPHJUntH5Xbu1OI",
+    "rating": 10,
+    "movie": {
+      "title": "The Matrix",
+      "slug": "the-matrix"
+    },
+    "character": {
+      "name": "Morpheus",
+      "slug": "morpheus"
+    },
+    "actor": {
+      "name": "Laurence Fishburne",
+      "slug": "laurence-fishburne"
+    }
+  },
+  {
+    "content": "There is no spoon.",
+    "year": 1999,
+    "categories": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "image_large_url": "https://i.ytimg.com/vi/XO0pcWxcROI/maxresdefault.jpg",
+    "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMamYtDE9kTXvKdA308D-HkaOFRZi17jxupMuL950MRLIJWGg23NFk0JUk",
+    "rating": 10,
+    "movie": {
+      "title": "The Matrix",
+      "slug": "the-matrix"
+    },
+    "character": {
+      "name": "Spoon Boy",
+      "slug": "spoon-boy"
+    },
+    "actor": {
+      "name": "Spoon Boy",
+      "slug": "spoon-boy"
+    }
+  },
+  {
+    "content": "Then you'll see, that it is not the spoon that bends, it is only yourself.",
+    "year": 1999,
+    "categories": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "image_large_url": "https://i.ytimg.com/vi/uAXtO5dMqEI/hqdefault.jpg",
+    "image_thumb_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8hmUNY_YCq0imcusA5-PDQo7-Y4a5JVpB4VIG6y9dugMYZhspZIoiGM",
+    "rating": 10,
+    "movie": {
+      "title": "The Matrix",
+      "slug": "the-matrix"
+    },
+    "character": {
+      "name": "Spoon Boy",
+      "slug": "spoon-boy"
+    },
+    "actor": {
+      "name": "Spoon Boy",
+      "slug": "spoon-boy"
+    }
+  },
+  {
+    "content": "Mr. Anderson. Surprised to see me?",
+    "year": 2003,
+    "categories": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "image_large_url": "https://i.ytimg.com/vi/hUAie-X3u8I/hqdefault.jpg",
+    "image_thumb_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN5-L0hcFyndEfAq-hU4ewoAfKMszC0Vpp357PiDHiKsDz0sB7Pz-0CkbB",
+    "rating": 7,
+    "movie": {
+      "title": "The Matrix Reloaded ",
+      "slug": "the-matrix-reloaded"
+    },
+    "character": {
+      "name": "Agent Smith",
+      "slug": "agent-smith"
+    },
+    "actor": {
+      "name": "Hugo Weaving",
+      "slug": "hugo-weaving"
     }
   }
 ]
