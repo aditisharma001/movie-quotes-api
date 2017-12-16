@@ -55,9 +55,10 @@ Please send an email to <a href="http://juanroldan.com.ar" target="_blank">juanr
 
 `Authorization: Token token=abcd1234`
 
-<aside class="notice">
-We have an awesome Ruby gem available :) <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a>
-</aside>
+## Ruby SDK
+Big ruby fan? We've got your back. There's an awesome ruby gem available to play with MovieQuote's API.
+
+Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a>
 
 # Quotes
 
