@@ -224,6 +224,11 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ruby-sdk" class="toc-h2 toc-link" data-title="Ruby SDK">Ruby SDK</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#quotes" class="toc-h1 toc-link" data-title="Quotes">Quotes</a>
@@ -332,10 +337,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 <p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API key to be included in <strong>all</strong> API requests in a header that looks like this:</p>
 
 <p><code>Authorization: Token token=abcd1234</code></p>
+<h2 id='ruby-sdk'>Ruby SDK</h2>
+<p>Big ruby fan? We&#39;ve got your back. There&#39;s an awesome ruby gem available to play with MovieQuote&#39;s API.</p>
 
-<aside class="notice">
-We have an awesome Ruby gem available :) <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a>
-</aside>
+<p>Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a></p>
 <h1 id='quotes'>Quotes</h1><h2 id='all'>All</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'movie_quotes'</span>
 
 <span class="n">filter</span> <span class="o">=</span> <span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">new</span>
