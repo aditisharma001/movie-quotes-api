@@ -288,6 +288,9 @@
                   <li>
                     <a href="#example-4" class="toc-h2 toc-link" data-title="Example 4">Example 4</a>
                   </li>
+                  <li>
+                    <a href="#example-5" class="toc-h2 toc-link" data-title="Example 5">Example 5</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -592,17 +595,17 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 </tr>
 </tbody></table>
 <h2 id='by-multiple'>By Multiple</h2>
-<p>Allows to query by several filters at once (movie, actor, character, quote&#39;s content and categories) providing only a string.</p>
+<p>Allows to query by <strong>several filters at once</strong> (quote&#39;s content, movie, actor, character and categories) providing only a string.</p>
 
 <p>Search results are gathered following an <strong>OR</strong> behavior.</p>
-<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_multiple</span><span class="p">(</span><span class="s2">"matrix"</span><span class="p">)</span>
+<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_multiple</span><span class="p">(</span><span class="s2">"take"</span><span class="p">)</span>
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix</code></p>
+<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -612,7 +615,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 </thead><tbody>
 <tr>
 <td>multiple</td>
-<td>Used to retrieve quotes containing a word or pieces of quotes <strong>OR</strong> quotes said in a movie <strong>OR</strong> by an actor <strong>OR</strong> by a character.</td>
+<td>Used to retrieve quotes which contain the word <strong>take</strong> on their <code>content</code> OR <code>movie</code> title OR <code>actor</code> name OR <code>character</code> name OR <code>categories</code> list</td>
 </tr>
 </tbody></table>
 <h2 id='by-rating'>By Rating</h2>
@@ -1097,6 +1100,115 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rando
       </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"clint-eastwood"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='example-5'>Example 5</h2>
+<p>Filtering quotes which contain the word <strong>take</strong> on their <code>content</code> OR <code>movie</code> title OR <code>actor</code> name OR <code>character</code> name OR <code>categories</code> list:</p>
+<pre class="highlight ruby tab-ruby"><code><span class="n">filter</span><span class="p">.</span><span class="nf">by_multiple</span><span class="p">(</span><span class="s2">"take"</span><span class="p">)</span>
+
+<span class="c1"># Make API call</span>
+<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"</span>
+  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"They may take our lives, but they'll never take our freedom!"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1995</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+         </span><span class="s2">"Biography"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Drama"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Action"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/BcZ-DaRkj5g/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRa7cBYH2OadLo8-D6ugY_jAYxaSmFY5lXSbuTuiKsflonMVXj7Ms4VGU8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rating"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Braveheart"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"braveheart"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"William Wallace"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"william-wallace"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Mel Gibson"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"mel-gibson"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"A census taker once tried to test me. I ate his liver with some fava beans and a nice Chianti."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1991</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+         </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Drama"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/M1b2v_Lls3A/maxresdefault.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQO6iO860KO8e6Qmuv_ogCKdHXdo5CgWpPioU6CF9g5FSoqbQNoXPccQJo"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rating"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"The Silence Of The Lambs"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"the-silence-of-the-lambs"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Dr. Hannibal Lecter"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"dr-hannibal-lecter"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Anthony Hopkins"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"anthony-hopkins"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"Leave the gun. Take the cannolis."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">1972</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+         </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Drama"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://i.ytimg.com/vi/35fLKn2Tq3o/hqdefault.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaL2_UrrtdUlEX4TmLww_azWQpX4qfLDB2YYpv552S2GAqjiulzSgcnAEe"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rating"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"The Godfather"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"the-godfather"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Pete Clemenza"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"pete-clemenza"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Richard S. Castellano"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"richard-s-castellano"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"content"</span><span class="p">:</span><span class="s2">"If you let my daughter go now, that'll be the end of it. I will not look for you, I will not pursue you. But if you don't, I will look for you, I will find you, and I will kill you."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"year"</span><span class="p">:</span><span class="mi">2008</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"categories"</span><span class="p">:[</span><span class="w">
+         </span><span class="s2">"Thriller"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Crime"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Action"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="s2">"https://cdn.meme.am/instances/36649014.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBlvDKjs3w_xKtiXSbdY6wSr3MUK37nGtYM5jSgxyhCI75_J-LhO3FQ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rating"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"movie"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Taken"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"taken"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"character"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bryan Mills"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"bryan-mills"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Liam Neeson"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"slug"</span><span class="p">:</span><span class="s2">"liam-neeson"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h1 id='rate-limiting'>Rate Limiting</h1>
 <p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API provides a rate limit of <strong>5</strong> requests per <strong>5</strong> seconds.</p>
