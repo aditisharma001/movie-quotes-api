@@ -426,3 +426,121 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=harry-callah
   }
 ]
 ```
+
+## Example 5
+
+Filtering quotes which contain the word **take** on their `content` OR `movie` title OR `actor` name OR `character` name OR `categories` list:
+
+```ruby
+filter.by_multiple("take")
+
+# Make API call
+filter.results
+```
+
+```shell
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"
+  -H "Authorization: Token token=abcd1234"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+   {
+      "content":"They may take our lives, but they'll never take our freedom!",
+      "year":1995,
+      "categories":[
+         "Biography",
+         "Drama",
+         "Action"
+      ],
+      "image_large_url":"https://i.ytimg.com/vi/BcZ-DaRkj5g/maxresdefault.jpg",
+      "image_thumb_url":"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRa7cBYH2OadLo8-D6ugY_jAYxaSmFY5lXSbuTuiKsflonMVXj7Ms4VGU8",
+      "rating":10,
+      "movie":{
+         "title":"Braveheart",
+         "slug":"braveheart"
+      },
+      "character":{
+         "name":"William Wallace",
+         "slug":"william-wallace"
+      },
+      "actor":{
+         "name":"Mel Gibson",
+         "slug":"mel-gibson"
+      }
+   },
+   {
+      "content":"A census taker once tried to test me. I ate his liver with some fava beans and a nice Chianti.",
+      "year":1991,
+      "categories":[
+         "Thriller",
+         "Crime",
+         "Drama"
+      ],
+      "image_large_url":"https://i.ytimg.com/vi/M1b2v_Lls3A/maxresdefault.jpg",
+      "image_thumb_url":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQO6iO860KO8e6Qmuv_ogCKdHXdo5CgWpPioU6CF9g5FSoqbQNoXPccQJo",
+      "rating":10,
+      "movie":{
+         "title":"The Silence Of The Lambs",
+         "slug":"the-silence-of-the-lambs"
+      },
+      "character":{
+         "name":"Dr. Hannibal Lecter",
+         "slug":"dr-hannibal-lecter"
+      },
+      "actor":{
+         "name":"Anthony Hopkins",
+         "slug":"anthony-hopkins"
+      }
+   },
+   {
+      "content":"Leave the gun. Take the cannolis.",
+      "year":1972,
+      "categories":[
+         "Crime",
+         "Drama"
+      ],
+      "image_large_url":"https://i.ytimg.com/vi/35fLKn2Tq3o/hqdefault.jpg",
+      "image_thumb_url":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaL2_UrrtdUlEX4TmLww_azWQpX4qfLDB2YYpv552S2GAqjiulzSgcnAEe",
+      "rating":8,
+      "movie":{
+         "title":"The Godfather",
+         "slug":"the-godfather"
+      },
+      "character":{
+         "name":"Pete Clemenza",
+         "slug":"pete-clemenza"
+      },
+      "actor":{
+         "name":"Richard S. Castellano",
+         "slug":"richard-s-castellano"
+      }
+   },
+   {
+      "content":"If you let my daughter go now, that'll be the end of it. I will not look for you, I will not pursue you. But if you don't, I will look for you, I will find you, and I will kill you.",
+      "year":2008,
+      "categories":[
+         "Thriller",
+         "Crime",
+         "Action"
+      ],
+      "image_large_url":"https://cdn.meme.am/instances/36649014.jpg",
+      "image_thumb_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBlvDKjs3w_xKtiXSbdY6wSr3MUK37nGtYM5jSgxyhCI75_J-LhO3FQ",
+      "rating":10,
+      "movie":{
+         "title":"Taken",
+         "slug":"taken"
+      },
+      "character":{
+         "name":"Bryan Mills",
+         "slug":"bryan-mills"
+      },
+      "actor":{
+         "name":"Liam Neeson",
+         "slug":"liam-neeson"
+      }
+   }
+]
+```

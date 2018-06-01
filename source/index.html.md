@@ -365,31 +365,31 @@ movie | Used to retrieve quotes said in a movie.
 
 ## By Multiple
 
-Allows to query by several filters at once (movie, actor, character, quote's content and categories) providing only a string.
+Allows to query by **several filters at once** (quote's content, movie, actor, character and categories) providing only a string.
 
 Search results are gathered following an **OR** behavior.
 
 ```ruby
-filter.by_multiple("matrix")
+filter.by_multiple("take")
 
 # Make API call
 filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix"
+curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=matrix`
+`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take`
 
 ### Query Parameters
 
 Parameter | Description
 --------- | -----------
-multiple | Used to retrieve quotes containing a word or pieces of quotes **OR** quotes said in a movie **OR** by an actor **OR** by a character.
+multiple | Used to retrieve quotes which contain the word **take** on their `content` OR `movie` title OR `actor` name OR `character` name OR `categories` list
 
 
 
