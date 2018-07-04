@@ -234,7 +234,7 @@
             <a href="#quotes" class="toc-h1 toc-link" data-title="Quotes">Quotes</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#all" class="toc-h2 toc-link" data-title="All">All</a>
+                    <a href="#membership-plans" class="toc-h2 toc-link" data-title="Membership plans">Membership plans</a>
                   </li>
                   <li>
                     <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
@@ -344,45 +344,32 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 <p>Big ruby fan? We&#39;ve got your back. There&#39;s an awesome ruby gem available to play with MovieQuote&#39;s API.</p>
 
 <p>Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a></p>
-<h1 id='quotes'>Quotes</h1><h2 id='all'>All</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'movie_quotes'</span>
+<h1 id='quotes'>Quotes</h1><h2 id='membership-plans'>Membership plans</h2>
+<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API supports <strong>3</strong> membership plans:</p>
 
-<span class="n">filter</span> <span class="o">=</span> <span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">new</span>
-
-<span class="c1"># Make API call</span>
-<span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</span>
-  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oh, no, it wasn't the airplanes. It was Beauty killed the Beast."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">1933</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"categories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Drama"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Action"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Adventure"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"image_large_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s-media-cache-ak0.pinimg.com/736x/56/9c/f2/569cf2832aaabbcaa3487f22d335b4d7.jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image_thumb_url"</span><span class="p">:</span><span class="s2">"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI54WEStqtfEBeocTd1umDmBV4T2-u8D4NB_EJ13PUTUdMBuwfJde4sb4"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"movie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"King Kong"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"king-kong"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"character"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carl Denham"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"carl-denham"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"actor"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Robert Armstrong"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"robert-armstrong"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all quotes.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes</code></p>
+<table><thead>
+<tr>
+<th>Plan</th>
+<th>Price</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Free</td>
+<td>$ 0</td>
+<td>API provides 100 quotes. Technical support on weekends.</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>$ 4 / Month</td>
+<td>API provides 250 quotes. 24/7 technical support.</td>
+</tr>
+<tr>
+<td>Premium</td>
+<td>$ 7 / Month</td>
+<td>API provides 450 quotes. Access to brand new quotes monthly. 24/7 technical support.</td>
+</tr>
+</tbody></table>
 <h2 id='pagination'>Pagination</h2>
 <p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.</p>
 
@@ -426,7 +413,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
   </span><span class="p">},</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
@@ -452,7 +439,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># apply "slug" format to search terms, results will be more accurate</span>
 curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-3'>HTTP Request</h3>
+</code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
@@ -518,7 +505,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 <span class="c"># Multiples categories applied</span>
 curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=sci-fi,action"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</code></pre><h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
@@ -538,7 +525,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-5'>HTTP Request</h3>
+</code></pre><h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
@@ -558,7 +545,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-6'>HTTP Request</h3>
+</code></pre><h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
@@ -580,7 +567,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># apply "slug" format to search terms, results will be more accurate</span>
 curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-7'>HTTP Request</h3>
+</code></pre><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
@@ -604,7 +591,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-8'>HTTP Request</h3>
+</code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
@@ -628,7 +615,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-9'>HTTP Request</h3>
+</code></pre><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10</code></p>
 <h3 id='query-parameters-8'>Query Parameters</h3>
 <table><thead>
@@ -659,7 +646,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years
 <span class="c"># Multiples years applied</span>
 curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years[]=1999,2005"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-10'>HTTP Request</h3>
+</code></pre><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999</code></p>
 <h3 id='query-parameters-9'>Query Parameters</h3>
 <table><thead>
@@ -697,7 +684,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rando
 <span class="c"># Four quotes are picked randomly and returned to client.</span>
 curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
-</code></pre><h3 id='http-request-11'>HTTP Request</h3>
+</code></pre><h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4</code></p>
 <h3 id='query-parameters-10'>Query Parameters</h3>
 <table><thead>
