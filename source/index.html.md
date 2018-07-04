@@ -62,55 +62,15 @@ Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes'
 
 # Quotes
 
-## All
+## Membership plans
 
-```ruby
-require 'movie_quotes'
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API supports **3** membership plans:
 
-filter = MovieQuotes.new
-
-# Make API call
-filter.results
-```
-
-```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes"
-  -H "Authorization: Token token=abcd1234"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "content": "Oh, no, it wasn't the airplanes. It was Beauty killed the Beast.",
-    "year": 1933,
-    "categories": ["Drama", "Action", "Adventure"],
-    "image_large_url": "https://s-media-cache-ak0.pinimg.com/736x/56/9c/f2/569cf2832aaabbcaa3487f22d335b4d7.jpg",
-    "image_thumb_url":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI54WEStqtfEBeocTd1umDmBV4T2-u8D4NB_EJ13PUTUdMBuwfJde4sb4",
-    "rating": 8,
-    "movie": {
-      "title": "King Kong",
-      "slug": "king-kong"
-    },
-    "character": {
-      "name": "Carl Denham",
-      "slug": "carl-denham"
-    },
-    "actor":{
-      "name": "Robert Armstrong",
-      "slug": "robert-armstrong"
-    }
-  },
-  ...
-]
-```
-
-This endpoint retrieves all quotes.
-
-### HTTP Request
-
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes`
+Plan    | Price        | Description
+------- | ------------ | -----------
+Free    | $ 0          | API provides 100 quotes. Technical support on weekends.
+Basic   | $ 4 / Month  | API provides 250 quotes. 24/7 technical support.
+Premium | $ 7 / Month  | API provides 450 quotes. Access to brand new quotes monthly. 24/7 technical support.
 
 ## Pagination
 
