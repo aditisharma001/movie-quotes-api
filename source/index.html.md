@@ -68,9 +68,9 @@ Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes'
 
 Plan    | Price        | Description
 ------- | ------------ | -----------
-Free    | $ 0          | API provides 100 quotes. Technical support on weekends.
-Basic   | $ 4 / Month  | API provides 250 quotes. 24/7 technical support.
-Premium | $ 7 / Month  | API provides 450 quotes. Access to brand new quotes monthly. 24/7 technical support.
+Free    | $ 0          | API provides 300 quotes. Technical support on weekends.
+Basic   | $ 4 / Month  | API provides 550 quotes. 24/7 technical support.
+Premium | $ 7 / Month  | API provides 1000 quotes. Access to brand new quotes monthly. 24/7 technical support.
 
 ## Pagination
 
