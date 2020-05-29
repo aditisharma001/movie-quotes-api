@@ -45,13 +45,13 @@ require 'movie_quotes'
 filter = MovieQuotes.new
 ```
 
-> Make sure to replace `abcd1234` with your API key
+> Make sure to replace `abcd1234` with your API Key
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API key to allow access to the API. Before anything you should get an API Key (free).
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.
 
-Please send an email to <a href="http://juanroldan.com.ar" target="_blank">juanroldan1989@gmail.com</a>
+Please complete this form: <a href="https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform" target="_blank">https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform</a>
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API key to be included in **all** API requests in a header that looks like this:
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API Key to be included in **all** requests within a header that looks like this:
 
 `Authorization: Token token=abcd1234`
 
@@ -64,13 +64,172 @@ Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes'
 
 ## Membership plans
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API supports **3** membership plans:
+> Free Plan
 
-Plan    | Price        | Description
-------- | ------------ | -----------
-Free    | $ 0          | API provides 300 quotes. Technical support on weekends.
-Basic   | $ 4 / Month  | API provides 550 quotes. 24/7 technical support.
-Premium | $ 7 / Month  | API provides 1000 quotes. Access to brand new quotes monthly. 24/7 technical support.
+```shell
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ"
+}
+```
+
+```ruby
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ"
+}
+```
+
+> Basic Plan
+
+```shell
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "year": 1988,
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+  "rating": 9,
+  "character": {
+      "name": "John Mc Clane",
+      "slug": "john-mc-clane"
+  }
+}
+```
+
+```ruby
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "year": 1988,
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+  "rating": 9,
+  "character": {
+      "name": "John Mc Clane",
+      "slug": "john-mc-clane"
+  }
+}
+```
+
+> Advanced Plan
+
+```shell
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "year": 1988,
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+  "image_large_url": "https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg",
+  "categories": [
+      "Thriller",
+      "Crime",
+      "Action"
+  ],
+  "rating": 9,
+  "character": {
+      "name": "John Mc Clane",
+      "slug": "john-mc-clane"
+  },
+  "actor": {
+      "name": "Bruce Willis",
+      "slug": "bruce-willis"
+  }
+}
+```
+
+```ruby
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "year": 1988,
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+  "image_large_url": "https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg",
+  "categories": [
+      "Thriller",
+      "Crime",
+      "Action"
+  ],
+  "rating": 9,
+  "character": {
+      "name": "John Mc Clane",
+      "slug": "john-mc-clane"
+  },
+  "actor": {
+      "name": "Bruce Willis",
+      "slug": "bruce-willis"
+  }
+}
+```
+
+> Premium Plan
+
+```shell
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "year": 1988,
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+  "image_large_url": "https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg",
+  "categories": [
+      "Thriller",
+      "Crime",
+      "Action"
+  ],
+  "rating": 9,
+  "context_link": "https://www.youtube.com/watch?v=YfpDSNNgYhI",
+  "character": {
+      "name": "John Mc Clane",
+      "slug": "john-mc-clane"
+  },
+  "actor": {
+      "name": "Bruce Willis",
+      "slug": "bruce-willis"
+  },
+  "movie": {
+      "title": "Die Hard",
+      "slug": "die-hard"
+  }
+}
+```
+
+```ruby
+{
+  "id": 166,
+  "content": "Yippie-ki-yay, motherfucker!",
+  "year": 1988,
+  "image_thumb_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlniyMNhCV4h8UF9zn6Lka4s-OTU_j7Br43Kp5OR7eGljOAIpDXKystfQ",
+  "image_large_url": "https://i.ytimg.com/vi/YfpDSNNgYhI/hqdefault.jpg",
+  "categories": [
+      "Thriller",
+      "Crime",
+      "Action"
+  ],
+  "rating": 9,
+  "context_link": "https://www.youtube.com/watch?v=YfpDSNNgYhI",
+  "character": {
+      "name": "John Mc Clane",
+      "slug": "john-mc-clane"
+  },
+  "actor": {
+      "name": "Bruce Willis",
+      "slug": "bruce-willis"
+  },
+  "movie": {
+      "title": "Die Hard",
+      "slug": "die-hard"
+  }
+}
+```
+
+<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API supports **4** membership plans.
+
+Plan     | Price        | Description
+-------  | ------------ | -----------
+Free     | $ 0          | API provides 20 quotes.
+Basic    | $ 4 / Month  | API provides 50 quotes.
+Advanced | $ 9 / Month  | API provides 100 quotes.
+Premium  | $ 15 / Month | API provides +500 quotes. Access to brand new quotes weekly.
 
 ## Pagination
 
