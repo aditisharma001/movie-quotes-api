@@ -18,7 +18,7 @@ search: true
 
 # Introduction
 
-Welcome to the <a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than **500 movies**.
+Welcome to the <a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than **500 movies**.
 
 Search through movie quotes by **actors**, **characters**, **movies**, **genres**, **years** and even **pieces** of quotes.
 
@@ -30,8 +30,7 @@ There are language bindings in **Shell** & **Ruby**! You can view code **example
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes"
-  -H "Authorization: Token token=abcd1234"
+curl "http://moviequotes.rocks/api/v1/quotes" -H "Authorization: Token token=abcd1234"
 ```
 
 ```ruby
@@ -47,15 +46,16 @@ filter = MovieQuotes.new
 
 > Make sure to replace `abcd1234` with your API Key
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.
+<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.
 
-Please complete this form: <a href="https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform" target="_blank">https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform</a>
+Please complete this form: <a href="https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform" target="_blank">https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-\_MBBz55q3wP6sZ2ekI/viewform</a>
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API Key to be included in **all** requests within a header that looks like this:
+<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> expects for the API Key to be included in **all** requests within a header that looks like this:
 
 `Authorization: Token token=abcd1234`
 
 ## Ruby SDK
+
 Big ruby fan? We've got your back. There's an awesome ruby gem available to play with MovieQuote's API.
 
 Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes' target='_blank'>MovieQuotes</a>
@@ -222,18 +222,18 @@ Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes'
 }
 ```
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API supports **4** membership plans.
+<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API supports **4** membership plans.
 
-Plan     | Price        | Description
--------  | ------------ | -----------
-Free     | $ 0          | API provides 20 quotes.
-Basic    | $ 4 / Month  | API provides 50 quotes.
-Advanced | $ 9 / Month  | API provides 100 quotes.
-Premium  | $ 15 / Month | API provides +500 quotes. Access to brand new quotes weekly.
+| Plan     | Price        | Description                                                  |
+| -------- | ------------ | ------------------------------------------------------------ |
+| Free     | $ 0          | API provides 20 quotes.                                      |
+| Basic    | $ 4 / Month  | API provides 50 quotes.                                      |
+| Advanced | $ 9 / Month  | API provides 100 quotes.                                     |
+| Premium  | $ 15 / Month | API provides +500 quotes. Access to brand new quotes weekly. |
 
 ## Pagination
 
-<a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.
+<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.
 
 Every API call retrieves **20** quotes at a time (per page).
 
@@ -251,7 +251,7 @@ filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"
+curl "http://moviequotes.rocks/api/v1/quotes?page=1"
   -H "Authorization: Token token=abcd1234"
 ```
 
@@ -285,14 +285,13 @@ curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1`
+`GET http://moviequotes.rocks/api/v1/quotes?page=1`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-page | 1 | Used to retrieve **20** quotes top on each request.
-
+| Parameter | Default | Description                                         |
+| --------- | ------- | --------------------------------------------------- |
+| page      | 1       | Used to retrieve **20** quotes top on each request. |
 
 # Filters
 
@@ -310,21 +309,19 @@ filter.results
 
 ```shell
 # apply "slug" format to search terms, results will be more accurate
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"
+curl "http://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves`
+`GET http://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-actor | Used to retrieve quotes said by an actor.
-
-
+| Parameter | Description                               |
+| --------- | ----------------------------------------- |
+| actor     | Used to retrieve quotes said by an actor. |
 
 ## By Category (movie genre)
 
@@ -378,28 +375,26 @@ filter.results
 
 ```shell
 # Single category applied
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action"
+curl "http://moviequotes.rocks/api/v1/quotes?category=action"
   -H "Authorization: Token token=abcd1234"
 
 # Multiples categories applied
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=sci-fi,action"
+curl "http://moviequotes.rocks/api/v1/quotes?categories[]=sci-fi,action"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action`
+`GET http://moviequotes.rocks/api/v1/quotes?category=action`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-category | Used to retrieve quotes said in movies from 1 or N categories.
-
-
-
+| Parameter | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| category  | Used to retrieve quotes said in movies from 1 or N categories. |
 
 ## By Character
+
 ```ruby
 filter.by_character("morpheus")
 
@@ -408,25 +403,22 @@ filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"
+curl "http://moviequotes.rocks/api/v1/quotes?character=morpheus"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus`
+`GET http://moviequotes.rocks/api/v1/quotes?character=morpheus`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-character | Used to retrieve quotes said by a character.
-
-
-
-
+| Parameter | Description                                  |
+| --------- | -------------------------------------------- |
+| character | Used to retrieve quotes said by a character. |
 
 ## By Content
+
 ```ruby
 filter.by_content("spoon")
 
@@ -435,25 +427,22 @@ filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon"
+curl "http://moviequotes.rocks/api/v1/quotes?content=spoon"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon`
+`GET http://moviequotes.rocks/api/v1/quotes?content=spoon`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-content | Used to retrieve quotes containing a word or pieces of quotes.
-
-
-
-
+| Parameter | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| content   | Used to retrieve quotes containing a word or pieces of quotes. |
 
 ## By Movie
+
 ```ruby
 # apply "slug" format to search terms, results will be more accurate
 filter.by_movie("the-matrix")
@@ -464,23 +453,19 @@ filter.results
 
 ```shell
 # apply "slug" format to search terms, results will be more accurate
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"
+curl "http://moviequotes.rocks/api/v1/quotes?movie=the-matrix"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix`
+`GET http://moviequotes.rocks/api/v1/quotes?movie=the-matrix`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-movie | Used to retrieve quotes said in a movie.
-
-
-
-
+| Parameter | Description                              |
+| --------- | ---------------------------------------- |
+| movie     | Used to retrieve quotes said in a movie. |
 
 ## By Multiple
 
@@ -496,25 +481,22 @@ filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"
+curl "http://moviequotes.rocks/api/v1/quotes?multiple=take"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take`
+`GET http://moviequotes.rocks/api/v1/quotes?multiple=take`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-multiple | Used to retrieve quotes which contain the word **take** on their `content` OR `movie` title OR `actor` name OR `character` name OR `categories` list
-
-
-
-
+| Parameter | Description                                                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| multiple  | Used to retrieve quotes which contain the word **take** on their `content` OR `movie` title OR `actor` name OR `character` name OR `categories` list |
 
 ## By Rating
+
 Quotes filtered by rating from **1(worst)** to **10(best)**.
 
 ```ruby
@@ -527,25 +509,22 @@ filter.results
 ```
 
 ```shell
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10"
+curl "http://moviequotes.rocks/api/v1/quotes?rating=10"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10`
+`GET http://moviequotes.rocks/api/v1/quotes?rating=10`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-rating | Used to retrieve quotes with a certain rating.
-
-
-
-
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| rating    | Used to retrieve quotes with a certain rating. |
 
 ## By Year
+
 ```ruby
 filter.by_year(1999)
 
@@ -561,26 +540,23 @@ filter.results
 
 ```shell
 # Single year applied
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999"
+curl "http://moviequotes.rocks/api/v1/quotes?years=1999"
   -H "Authorization: Token token=abcd1234"
 
 # Multiples years applied
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?years[]=1999,2005"
+curl "http://moviequotes.rocks/api/v1/quotes?years[]=1999,2005"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999`
+`GET http://moviequotes.rocks/api/v1/quotes?years=1999`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-years | Used to retrieve quotes said in movies from an specific year.
-
-
-
+| Parameter | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| years     | Used to retrieve quotes said in movies from an specific year. |
 
 ## Randomly
 
@@ -590,7 +566,7 @@ One or many quotes can be picked randomly and returned to the client.
 # A single quote is picked randomly and returned to client.
 filter.by_random
 
-# or 
+# or
 # A single quote is picked randomly and returned to client.
 filter.by_random(1)
 filter.by_random("1")
@@ -606,20 +582,20 @@ filter.results
 
 ```shell
 # A single quote is picked randomly and returned to client.
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=1"
+curl "http://moviequotes.rocks/api/v1/quotes?random=1"
   -H "Authorization: Token token=abcd1234"
 
 # Four quotes are picked randomly and returned to client.
-curl "http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4"
+curl "http://moviequotes.rocks/api/v1/quotes?random=4"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4`
+`GET http://moviequotes.rocks/api/v1/quotes?random=4`
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-random | Used to retrieve 1 or N quotes randomly.
+| Parameter | Description                              |
+| --------- | ---------------------------------------- |
+| random    | Used to retrieve 1 or N quotes randomly. |
