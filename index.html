@@ -312,7 +312,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the <a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than <strong>500 movies</strong>.</p>
+<p>Welcome to the <a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than <strong>500 movies</strong>.</p>
 
 <p>Search through movie quotes by <strong>actors</strong>, <strong>characters</strong>, <strong>movies</strong>, <strong>genres</strong>, <strong>years</strong> and even <strong>pieces</strong> of quotes.</p>
 
@@ -322,8 +322,7 @@
 <p>Setup the API Key</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</span>
-  -H <span class="s2">"Authorization: Token token=abcd1234"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes"</span> -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="no">MovieQuotes</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"abcd1234"</span>
 <span class="k">end</span>
@@ -337,11 +336,11 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 <p>Make sure to replace <code>abcd1234</code> with your API Key</p>
 </blockquote>
 
-<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.</p>
+<p><a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.</p>
 
 <p>Please complete this form: <a href="https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform" target="_blank">https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform</a></p>
 
-<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> expects for the API Key to be included in <strong>all</strong> requests within a header that looks like this:</p>
+<p><a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> expects for the API Key to be included in <strong>all</strong> requests within a header that looks like this:</p>
 
 <p><code>Authorization: Token token=abcd1234</code></p>
 <h2 id='ruby-sdk'>Ruby SDK</h2>
@@ -491,7 +490,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API supports <strong>4</strong> membership plans.</p>
+<p><a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API supports <strong>4</strong> membership plans.</p>
 
 <table><thead>
 <tr>
@@ -522,7 +521,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 </tr>
 </tbody></table>
 <h2 id='pagination'>Pagination</h2>
-<p><a href="http://movie-quotes-app.herokuapp.com" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.</p>
+<p><a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.</p>
 
 <p>Every API call retrieves <strong>20</strong> quotes at a time (per page).</p>
 <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'movie_quotes'</span>
@@ -535,7 +534,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?page=1"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre>
 <blockquote>
@@ -565,7 +564,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?page=1</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?page=1</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -588,10 +587,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes"</spa
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># apply "slug" format to search terms, results will be more accurate</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor=keanu-reeves</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -650,14 +649,14 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?actor
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Single category applied</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?category=action"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 
 <span class="c"># Multiples categories applied</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categories[]=sci-fi,action"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?categories[]=sci-fi,action"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?category=action</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?category=action</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -674,10 +673,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?character=morpheus"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?character=morpheus</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?character=morpheus</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -694,10 +693,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?content=spoon"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?content=spoon</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?content=spoon</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -716,10 +715,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?categ
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># apply "slug" format to search terms, results will be more accurate</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?movie=the-matrix"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie=the-matrix</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?movie=the-matrix</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -740,10 +739,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?multiple=take"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?multiple=take</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?multiple=take</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -764,10 +763,10 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10"</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?rating=10"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?rating=10</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?rating=10</code></p>
 <h3 id='query-parameters-8'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -791,14 +790,14 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?movie
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># Single year applied</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?years=1999"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 
 <span class="c"># Multiples years applied</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years[]=1999,2005"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?years[]=1999,2005"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?years=1999</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?years=1999</code></p>
 <h3 id='query-parameters-9'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -816,7 +815,7 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years
 <pre class="highlight ruby tab-ruby"><code><span class="c1"># A single quote is picked randomly and returned to client.</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span>
 
-<span class="c1"># or </span>
+<span class="c1"># or</span>
 <span class="c1"># A single quote is picked randomly and returned to client.</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">by_random</span><span class="p">(</span><span class="s2">"1"</span><span class="p">)</span>
@@ -829,14 +828,14 @@ curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?years
 <span class="c1"># Make API call</span>
 <span class="n">filter</span><span class="p">.</span><span class="nf">results</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># A single quote is picked randomly and returned to client.</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=1"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?random=1"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 
 <span class="c"># Four quotes are picked randomly and returned to client.</span>
-curl <span class="s2">"http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4"</span>
+curl <span class="s2">"http://moviequotes.rocks/api/v1/quotes?random=4"</span>
   -H <span class="s2">"Authorization: Token token=abcd1234"</span>
 </code></pre><h3 id='http-request-10'>HTTP Request</h3>
-<p><code>GET http://movie-quotes-app.herokuapp.com/api/v1/quotes?random=4</code></p>
+<p><code>GET http://moviequotes.rocks/api/v1/quotes?random=4</code></p>
 <h3 id='query-parameters-10'>Query Parameters</h3>
 <table><thead>
 <tr>
