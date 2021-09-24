@@ -6,13 +6,20 @@
   </a>
 </div>
 
-# MovieQuotes API Docs
+# MovieQuotes REST API Docs
 
-* Please check all available information [here](http://juanroldan.com.ar/movie-quotes-api)
+* Documentation on **Authentication**, **Endpoints** and **Subscription plans** [here](http://juanroldan.com.ar/movie-quotes-api)
 
-* MovieQuotes website [here](https://movie-quotes-app.herokuapp.com/)
+* **Big Ruby fan?** We've also got your back with this [awesome gem](https://github.com/juanroldan1989/movie_quotes) to interact with our [MovieQuotes REST API](http://juanroldan.com.ar/movie-quotes-api)
 
-* Big ruby fan? We've got your back with this [awesome gem](https://github.com/juanroldan1989/movie_quotes) to interact with our API
+* [MovieQuotes website](http://moviequotes.rocks/)
+
+# MovieQuotes GraphQL API Docs
+
+* Documentation on GraphQL API **Schema**, **Objects** and **Subscription plans** [here](http://juanroldan.com.ar/movie-quotes-graphql-api)
+
+* MovieQuotes GraphQL API is compatible with any **GraphQL** clients like: [Apollo](https://studio.apollographql.com/sandbox/explorer) and [Postman](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
+
 
 --------------------------------------------------------
 
