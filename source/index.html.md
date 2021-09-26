@@ -18,7 +18,7 @@ search: true
 
 # Introduction
 
-Welcome to the <a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than **500 movies**.
+Welcome to the <a href="https://moviequotes.rocks" target="_blank">MovieQuotes</a> API! You can use this API to access well known quotes from more than **500 movies**.
 
 Search through movie quotes by **actors**, **characters**, **movies**, **genres**, **years** and even **pieces** of quotes.
 
@@ -30,7 +30,7 @@ There are language bindings in **Shell** & **Ruby**! You can view code **example
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "http://moviequotes.rocks/api/v1/quotes" -H "Authorization: Token token=abcd1234"
+curl "https://moviequotes.rocks/api/v1/quotes" -H "Authorization: Token token=abcd1234"
 ```
 
 ```ruby
@@ -46,11 +46,11 @@ filter = MovieQuotes.new
 
 > Make sure to replace `abcd1234` with your API Key
 
-<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.
+<a href="https://moviequotes.rocks" target="_blank">MovieQuotes</a> uses an API Key to allow access to the API. Before anything you should get an API Key.
 
 Please complete this form: <a href="https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-_MBBz55q3wP6sZ2ekI/viewform" target="_blank">https://docs.google.com/forms/d/15evfQ0GKNVB71yhlQB06tB6F-\_MBBz55q3wP6sZ2ekI/viewform</a>
 
-<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> expects for the API Key to be included in **all** requests within a header that looks like this:
+<a href="https://moviequotes.rocks" target="_blank">MovieQuotes</a> expects for the API Key to be included in **all** requests within a header that looks like this:
 
 `Authorization: Token token=abcd1234`
 
@@ -222,7 +222,7 @@ Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes'
 }
 ```
 
-<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API supports **4** membership plans.
+<a href="https://moviequotes.rocks" target="_blank">MovieQuotes</a> API supports **4** membership plans.
 
 | Plan     | Price        | Description                                                  |
 | -------- | ------------ | ------------------------------------------------------------ |
@@ -233,7 +233,7 @@ Check it out on Github: <a href='https://github.com/juanroldan1989/movie_quotes'
 
 ## Pagination
 
-<a href="http://moviequotes.rocks" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.
+<a href="https://moviequotes.rocks" target="_blank">MovieQuotes</a> API enables pagination via page query parameter on GET requests.
 
 Every API call retrieves **20** quotes at a time (per page).
 
@@ -251,7 +251,7 @@ filter.results
 ```
 
 ```shell
-curl "http://moviequotes.rocks/api/v1/quotes?page=1"
+curl "https://moviequotes.rocks/api/v1/quotes?page=1"
   -H "Authorization: Token token=abcd1234"
 ```
 
@@ -285,7 +285,7 @@ curl "http://moviequotes.rocks/api/v1/quotes?page=1"
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?page=1`
+`GET https://moviequotes.rocks/api/v1/quotes?page=1`
 
 ### Query Parameters
 
@@ -309,13 +309,13 @@ filter.results
 
 ```shell
 # apply "slug" format to search terms, results will be more accurate
-curl "http://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves"
+curl "https://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves`
+`GET https://moviequotes.rocks/api/v1/quotes?actor=keanu-reeves`
 
 ### Query Parameters
 
@@ -375,17 +375,17 @@ filter.results
 
 ```shell
 # Single category applied
-curl "http://moviequotes.rocks/api/v1/quotes?category=action"
+curl "https://moviequotes.rocks/api/v1/quotes?category=action"
   -H "Authorization: Token token=abcd1234"
 
 # Multiples categories applied
-curl "http://moviequotes.rocks/api/v1/quotes?categories[]=sci-fi,action"
+curl "https://moviequotes.rocks/api/v1/quotes?categories[]=sci-fi,action"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?category=action`
+`GET https://moviequotes.rocks/api/v1/quotes?category=action`
 
 ### Query Parameters
 
@@ -403,13 +403,13 @@ filter.results
 ```
 
 ```shell
-curl "http://moviequotes.rocks/api/v1/quotes?character=morpheus"
+curl "https://moviequotes.rocks/api/v1/quotes?character=morpheus"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?character=morpheus`
+`GET https://moviequotes.rocks/api/v1/quotes?character=morpheus`
 
 ### Query Parameters
 
@@ -427,13 +427,13 @@ filter.results
 ```
 
 ```shell
-curl "http://moviequotes.rocks/api/v1/quotes?content=spoon"
+curl "https://moviequotes.rocks/api/v1/quotes?content=spoon"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?content=spoon`
+`GET https://moviequotes.rocks/api/v1/quotes?content=spoon`
 
 ### Query Parameters
 
@@ -453,13 +453,13 @@ filter.results
 
 ```shell
 # apply "slug" format to search terms, results will be more accurate
-curl "http://moviequotes.rocks/api/v1/quotes?movie=the-matrix"
+curl "https://moviequotes.rocks/api/v1/quotes?movie=the-matrix"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?movie=the-matrix`
+`GET https://moviequotes.rocks/api/v1/quotes?movie=the-matrix`
 
 ### Query Parameters
 
@@ -481,13 +481,13 @@ filter.results
 ```
 
 ```shell
-curl "http://moviequotes.rocks/api/v1/quotes?multiple=take"
+curl "https://moviequotes.rocks/api/v1/quotes?multiple=take"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?multiple=take`
+`GET https://moviequotes.rocks/api/v1/quotes?multiple=take`
 
 ### Query Parameters
 
@@ -509,13 +509,13 @@ filter.results
 ```
 
 ```shell
-curl "http://moviequotes.rocks/api/v1/quotes?rating=10"
+curl "https://moviequotes.rocks/api/v1/quotes?rating=10"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?rating=10`
+`GET https://moviequotes.rocks/api/v1/quotes?rating=10`
 
 ### Query Parameters
 
@@ -540,17 +540,17 @@ filter.results
 
 ```shell
 # Single year applied
-curl "http://moviequotes.rocks/api/v1/quotes?years=1999"
+curl "https://moviequotes.rocks/api/v1/quotes?years=1999"
   -H "Authorization: Token token=abcd1234"
 
 # Multiples years applied
-curl "http://moviequotes.rocks/api/v1/quotes?years[]=1999,2005"
+curl "https://moviequotes.rocks/api/v1/quotes?years[]=1999,2005"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?years=1999`
+`GET https://moviequotes.rocks/api/v1/quotes?years=1999`
 
 ### Query Parameters
 
@@ -582,17 +582,17 @@ filter.results
 
 ```shell
 # A single quote is picked randomly and returned to client.
-curl "http://moviequotes.rocks/api/v1/quotes?random=1"
+curl "https://moviequotes.rocks/api/v1/quotes?random=1"
   -H "Authorization: Token token=abcd1234"
 
 # Four quotes are picked randomly and returned to client.
-curl "http://moviequotes.rocks/api/v1/quotes?random=4"
+curl "https://moviequotes.rocks/api/v1/quotes?random=4"
   -H "Authorization: Token token=abcd1234"
 ```
 
 ### HTTP Request
 
-`GET http://moviequotes.rocks/api/v1/quotes?random=4`
+`GET https://moviequotes.rocks/api/v1/quotes?random=4`
 
 ### Query Parameters
 
